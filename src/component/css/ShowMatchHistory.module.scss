@@ -1,0 +1,114 @@
+.section-padding {
+  height: 100px;
+  width: 1000px;
+}
+
+.accordion-item {
+  //background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion-body {
+  background-color: green;
+}
+
+.accordion-area {
+  //background-color: red;
+}
+
+.container {
+  //border: solid 1px black;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 10px;
+}
+
+.list-item {
+  border-radius: 10px;
+  //height: 60.5px;
+  height: 20%;
+  border: solid 1px black;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(9, 30, 66, 0.31) 0px 0px 1px 0px, rgba(9, 30, 66, 0.25) 0px 1px 1px 0px;
+  //position: relative;
+
+}
+
+
+////for modal
+
+
+.modal__backdrop {
+  background: rgba(0, 0, 0, .25);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 22;
+}
+
+.modal__container {
+  background: #fff;
+  border-radius: 5px;
+  max-width: 100%;
+  margin: 50px auto;
+  position: relative;
+  z-index: 23;
+  padding: 15px;
+  width: 1560px;
+  height: 720px;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal__title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.button {
+  background: #8c54ff;
+  border: 0;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 10px 15px;
+  transition: transform 100ms ease-out;
+
+  &:hover {
+    background: #682ede;
+    transform: scale(1.01);
+  }
+}
+
+.table_wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.table_1 {
+  //flex: 1;
+}
+.info_container{
+  flex: 1;
+  border: solid 1px black;
+  margin-left: 10px;
+  margin-right: 10px;
+  //max-height: 100%;
+  //height: 100%;
+}
+
+.table_2 {
+  //flex: 1;
+}

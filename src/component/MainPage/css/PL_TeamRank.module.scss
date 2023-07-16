@@ -1,0 +1,80 @@
+.outerTag {
+  font-weight: bold;
+  padding: 5px;
+  text-align: left;
+  display: flex;
+  margin: 6px 2px 6px 2px;
+
+}
+.outerTag:hover{
+background-color: gainsboro;
+}
+.main {
+  width: 80%;
+}
+
+.main-ptag {
+  display: flex;
+}
+
+.goalCount {
+  width: 20%;
+  text-align: center;
+}
+.teamrank_img{
+  width: 24px;
+  height: 24px;
+}
+
+.medal,
+.medalPlaceholder {
+  display: inline-block;
+  width: 24px; /* 이미지의 실제 크기 */
+  height: 24px; /* 이미지의 실제 크기 */
+  vertical-align: middle;
+}
+
+.medal {
+  margin-right: 8px;
+  /* 이미지가 출력되는 경우에는 오른쪽에 8px의 마진을 추가 */
+}
+
+.medalPlaceholder {
+  visibility: hidden;
+  margin-right: 8px;
+  /* 이미지가 출력되지 않는 경우에는 요소를 숨김 */
+}
+
+
+///툴팁 관련 css및 애니메이션 추가
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px;
+
+  /* 포지션 조정 */
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+
+  /* 애니메이션 */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}

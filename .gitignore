@@ -10,7 +10,8 @@
 
 # production
 /build
-
+/src/assets
+src/component/Instance.jsx
 # misc
 .DS_Store
 .env.local
@@ -21,3 +22,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+/.env
+/src/assets/
+/src/data/
+/.idea/
+/public
+/src/*.png

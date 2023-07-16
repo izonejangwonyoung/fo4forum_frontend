@@ -1,0 +1,287 @@
+.container {
+  height: 80vh;
+  width: 80vw;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  //align-items: center;
+  //justify-content:center;
+}
+
+
+.container_card {
+  position: relative;
+  grid-column: 1/3;
+  grid-row: 2/12;
+  overflow: hidden;
+  margin-right: 30px;
+}
+
+.card_introduce {
+  grid-column: 3/12;
+  grid-row: 2/12;
+  display: grid;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(12,1fr);
+}
+.card_introduce_txt{
+  grid-column: 1/10;
+  grid-row: 1;
+}
+.card_background {
+  //height: 302.39px;
+  //width: 189px;
+}
+
+.card_playerface {
+  width: 189px;
+  height: 189px;
+  position: absolute;
+  left: 15px;
+  top: 61px;
+  z-index: 10;
+}
+
+.card_playerface img {
+  width: 189px;
+  height: 189px;
+}
+
+.card_hex {
+  width: 26.14px;
+  height: 26.14px;
+  position: absolute;
+  left: 92px;
+  top: 290px;
+  z-index: 12;
+  transform: rotate(90deg);
+}
+
+.card_idontknow {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 191px;
+  left: 13px;
+  z-index: 11;
+}
+
+.card_ovr {
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  left: 7%;
+  top: 45px;
+  z-index: 13;
+  font-size: 26px;
+  font-weight: bold;
+  color: white;
+}
+
+.card_payside {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  left: 99px;
+  top: 295px;
+  z-index: 11;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.card_playername {
+  position: absolute;
+  top: 255px;
+  left: 33px;
+}
+
+.card_season {
+  width: 33px;
+  height: 33px;
+  top: -143px;
+  position: relative;
+  z-index: 15;
+  left: 19px;
+}
+
+.card_nation {
+  width: 33px;
+  height: 33px;
+  top: -295px;
+  position: relative;
+  z-index: 15;
+  left: 21px;
+}
+
+.card_season img {
+  width: 33px;
+  height: 33px;
+}
+
+
+.soccer_field_img{
+  width: 500px;
+  height: 300px;
+  grid-column: 10/13;
+  grid-row: 1/12;
+  position: relative;
+}
+.soccer_field_img img{
+  width: 500px;
+  height: 300px;
+}
+.text{
+  text-align: center;
+}
+
+
+////필드 사진 위에 능력치 출력
+.soccer_field_st{
+  display: inline-block;
+  position: absolute;
+  top: 144px;
+  left: 442px;
+  color: #b4b4b4;
+  text-align: center;
+  width: 26px;
+}
+
+.soccer_field_lw{
+  position: absolute;
+  top: 39px;
+  left: 383px;
+  color:#b4b4b4;
+  text-align: center;
+  width: 26px;
+}
+.soccer_field_cf{
+  position: absolute;
+  top: 144px;
+  left: 383px;
+  color:#b4b4b4;
+  width: 26px;
+  text-align: center;
+}
+.soccer_field_rw{
+  position: absolute;
+  top: 249px;
+  left: 383px;
+  color:#b4b4b4;
+  width: 26px;
+  text-align: center;
+}
+.soccer_field_cam{
+  position: absolute;
+  top: 144px;
+  left: 323px;
+  color:#b4b4b4;
+  text-align: center;
+  width: 26px;
+
+}
+.soccer_field_lm{
+  position: absolute;
+  top: 74px;
+  left: 263px;
+  color:#b4b4b4;
+  text-align: center;
+  width: 26px;
+}
+.soccer_field_rm{
+  position: absolute;
+  top: 214px;
+  left: 264px;
+  color:#b4b4b4;
+  text-align: center;
+  width: 26px;
+}
+.soccer_field_cm{
+  position: absolute;
+  top: 144px;
+  left: 264px;
+  text-align: center;
+  color:#b4b4b4;
+  width: 26px;
+}
+.soccer_field_cdb{
+  position: absolute;
+  top: 144px;
+  left: 205px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.soccer_field_lwb{
+  position: absolute;
+  top: 39px;
+  left: 146px;
+  width: 26px;
+  text-align: center;
+  color:#b4b4b4;
+}
+.soccer_field_cb{
+  position: absolute;
+  top: 144px;
+  left: 146px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.soccer_field_rwb{
+  position: absolute;
+  top: 249px;
+  left: 146px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+
+.soccer_field_lb{
+  position: absolute;
+  top: 62px;
+  left: 86px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.soccer_field_sw{
+  position: absolute;
+  top: 144px;
+  left: 86px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.soccer_field_rb{
+  position: absolute;
+  top: 225px;
+  left: 86px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.soccer_field_gk{
+  position: absolute;
+  top: 144px;
+  left: 27px;
+  width: 26px;
+  color:#b4b4b4;
+  text-align: center;
+}
+.trait_img_container{
+  display: flex;
+  //grid-auto-columns: minmax(0, 1fr); /* 그리드 아이템의 컬럼 크기를 자동으로 조정 */
+  //grid-auto-rows: min-content; /* 그리드 아이템의 로우 크기를 자동으로 조정 */
+  grid-row: 2/3;
+  grid-column:1/10 ;
+  flex-wrap: wrap;
+}
+
+
+
+
+
+
+

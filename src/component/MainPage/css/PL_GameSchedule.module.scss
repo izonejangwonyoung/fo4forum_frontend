@@ -1,0 +1,158 @@
+.outerTag {
+
+  border-radius: 10px;
+  height: 60.5px;
+  border: solid 1px black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(9, 30, 66, 0.31) 0px 0px 1px 0px, rgba(9, 30, 66, 0.25) 0px 1px 1px 0px;
+  position: relative;
+}
+
+.leftbox {
+  width: 90%;
+}
+
+.rightbox {
+  width: 20%;
+  text-align: center;
+}
+
+
+.firstline {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 100%;
+}
+
+.secondline {
+  flex-direction: column;
+}
+
+.thirdline {
+  display: flex;
+}
+
+.ptag {
+  //margin-right: auto;
+  padding: 0;
+  display: flex;
+  //width: 60%;
+}
+
+.home {
+  //padding-left: 10px;
+  //padding-right: 10px;
+  justify-content: center;
+  align-items: center;
+  //margin-left: 15%;
+  //display: flex;
+  //width: 50%;
+}
+
+.home-div {
+  flex: 3;
+  display: flex;
+  justify-content: center;
+  margin-left: 15px;
+  //width: 30%;
+}
+
+.away-div {
+  flex: 3;
+  justify-content: center;
+  display: flex;
+  //width: 30%;
+}
+
+.stadium {
+  flex: 4;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-right: 10px;
+  padding-left: 10px;
+  //overflow: hidden; /* 넘치는 부분을 숨김 */
+  //text-overflow: ellipsis; /* 넘치는 부분을 "..."으로 생략 */
+  //width: 150px; /* 너비를 지정하여 넘침 여부를 결정 */
+}
+
+.stadium-text {
+  white-space: nowrap; /* 텍스트가 넘칠 경우 줄 바꿈 하지 않음 */
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+  text-overflow: ellipsis; /* 넘치는 부분을 "..."으로 생략 */
+}
+
+.playdate {
+  flex-direction: column;
+  white-space: nowrap; /* 텍스트가 넘칠 경우 줄 바꿈 하지 않음 */
+
+}
+
+.homescore {
+  margin-left: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+
+}
+
+.awayscore {
+  margin-right: auto;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-weight: bold;
+}
+
+.away {
+  //padding-left: 10px;
+  //padding-right: 10px;
+  white-space: nowrap;
+}
+
+
+.stadium img {
+  padding-right: 5px;
+}
+
+.status {
+  padding: 0 10px 0 10px;
+  display: inline-block;
+  border: solid 1px grey;
+  border-radius: 10px;
+  background-color: #bacbe6;
+  text-align: center;
+  justify-content: center;
+}
+
+
+.status-img {
+
+  position: relative;
+  //top: 50%;
+  //transform: translateY(-50%);
+
+}
+
+.date {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.team-logo{
+  width: 24px;
+  height: 24px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
