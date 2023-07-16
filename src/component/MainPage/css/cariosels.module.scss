@@ -73,3 +73,12 @@
 .current {
   background: gray;
 }
+@media only screen and (max-width: 768px) {
+.container {
+  width: 100%;
+}
+  .window{
+    width: 100%;
+  }
+
+}

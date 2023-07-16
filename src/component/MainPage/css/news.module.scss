@@ -9,6 +9,23 @@
   //border:solid 1px black;
 
 }
-.ptag:hover{
+
+.ptag:hover {
   background-color: gainsboro;
+}
+
+@media only screen and (max-width: 768px) {
+  .ptag a{
+    border-radius: 10px;
+    text-decoration: none;
+    overflow: hidden;
+    text-align: left;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 47%;
+  }
 }

@@ -20,7 +20,7 @@
   gap: 30px;
   flex-wrap: wrap;
   margin-left: 54px;
-
+  overflow: hidden;
 }
 
 .carousel {
@@ -28,6 +28,9 @@
   //display: inline-block;
   display: flex;
   justify-content: flex-start;
+  flex-basis: 40%;
+
+  //width: 49%;
   //min-width: 800px;
   //min-height: 300px;
   //margin-left: 150px;
@@ -43,6 +46,8 @@
 .news {
   //background-color: #bacbe6;
   margin-left: 50px;
+  //width: 46%;
+  flex-basis: 40%;
 }
 
 .news-title {
@@ -54,11 +59,12 @@
 
 .secondDiv {
   //margin-top: 113px;
-  margin-top: calc(113px / (100% - 150px) * 100);
+  //margin-top: calc(113px / (100% - 150px) * 100);
   //background-color: slategray;
   display: flex;
   flex-wrap: wrap;
   margin-left: 54px;
+  min-width: 800px;
 }
 
 .no {
@@ -66,9 +72,11 @@
   //display: inline-block;
 
 }
-.score_div{
+
+.score_div {
   //display: inline-block;
 }
+
 .no2 {
   //background-color: #00b074;
   display: inline-block;
@@ -150,24 +158,101 @@
 
   //display: flex;
 }
-.thirdDiv{
+
+.thirdDiv {
   margin-left: 54px;
   margin-right: 54px;
 }
-.container_vote{
+
+.container_vote {
   //background-color: rebeccapurple;
   //border: solid 1px black;
   border-radius: 15px;
   background-color: white;
 }
-.vote_div1{
+
+.vote_div1 {
   display: inline-block;
   width: 50%;
 }
-.vote_div2{
+
+.vote_div2 {
   width: 50%;
   display: inline-block;
   text-align: right;
+}
+
+@media only screen and (max-width: 768px) {
+  /* 모바일 화면에 대한 스타일 및 레이아웃 설정 */
+  .MainPageLayout {
+    //width: 100%;
+    margin: 0;
+    overflow: hidden;
+  }
+  .yes {
+    width: 100%;
+    display: flex;
+    margin: 0;
+    flex-direction: row;
+    overflow-x: hidden;
+  }
+  .carousel {
+    flex: 0 0 100%; /* 각 자식 요소가 1줄 씩 가로로 화면을 꽉 채우도록 flex 속성을 설정합니다 */
+    //overflow: hidden;
+    max-width: 100%;
+  }
+  .news {
+    flex: 0 0 100%; /* 각 자식 요소가 1줄 씩 가로로 화면을 꽉 채우도록 flex 속성을 설정합니다 */
+    max-width: 100%;
+    margin: 0 0 0 5%;
+
+    //display: none;
+  }
+  .news-title {
+    margin-left: 5%;
+  }
+  .secondDiv {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: row;
+    margin: 10% 0 0 5%;
+  }
+  .test2 {
+    margin: 0;
+    display: inline-block;
+    background-color: white;
+    height: 424px;
+    //width: 348px;
+    border-radius: 10px;
+    //border: solid 1px black;
+    overflow: auto;
+  }
+  .no1 {
+    margin: 0;
+    width: 700px;
+  }
+  .test3 {
+    width: 50%;
+  }
+  .no2 {
+    margin: 10% 0 0 ;
+  }
+  .thirdDiv {
+    width: 90%;
+    margin: 10% 0 0 5%;
+  }
+  .container_vote {
+    margin: 0;
+  }
+  .vote_container_desc {
+    width: 94%;
+  }
+  .vote_div1 {
+  }
+  .vote_div2 a {
+    text-decoration: none;
+  }
 }
 
 //
