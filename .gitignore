@@ -27,4 +27,3 @@ yarn-error.log*
 /src/data/
 /.idea/
 /public
-/src/*.png
