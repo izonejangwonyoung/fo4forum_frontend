@@ -310,6 +310,11 @@
                 "seasonImg": "https://ssl.nexon.com/s2/game/fo4/obt/externalAssets/season/rtn.png"
         },
         {
+                "seasonId": 287,
+                "className": "23 TOTS (23 Team Of The Season)",
+                "seasonImg": "https://ssl.nexon.com/s2/game/fo4/obt/externalAssets/season/23tots.png"
+        },
+        {
                 "seasonId": 293,
                 "className": "22 KFA (22 KFA)",
                 "seasonImg": "https://ssl.nexon.com/s2/game/fo4/obt/externalAssets/season/22kfa.png"
