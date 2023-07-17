@@ -175,43 +175,159 @@ import Container from 'react-bootstrap/Container'
 import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import NavDropdown from 'react-bootstrap/NavDropdown'
+import logo from '../fo4forum_logo.43694e2403db70406c27-removebg-preview.png'
+import { Link, NavLink } from 'react-router-dom'
+import classNames from 'classnames/bind'
+import styles from './navbar.module.scss'
+import { useEffect, useRef, useState } from 'react'
+import axios from 'axios'
+import { useDispatch, useSelector } from 'react-redux'
+import { openModal, closeModal } from '../Redux/LoginModalControlReducer'
+import { openSignUpModal, closeSignUpModal } from '../Redux/SignUpModalControlReducer'
+
+const cx = classNames.bind(styles)
+const apiUrl = process.env.REACT_APP_API_URL
 
 function navbarexample () {
+    const [IsLogin, setIsLogin] = useState(false)
+    const [user, setUser] = useState({})
+    useEffect(() => {
+        try {
+            axios({
+                url: `${apiUrl}/login/success`,
+                method: 'GET',
+                withCredentials: true
+            })
+                .then((result) => {
+                    console.log(result, '/login/success 실행 결과')
+                    if (result.data) {
+                        setIsLogin(true)
+                        setUser(result.data[0])
+                        console.log(result)
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    }, [])
+    const datafromredux = useSelector((state) => state.modal.isModalOpen)
+
+    const dispatch = useDispatch()
+    const handleClickLoginOpen = () => {
+        dispatch(openModal())
+    }
+    const handleClickClose = () => {
+        dispatch(closeModal())
+    }
+    const handleClickSignUpOpen = () => {
+        dispatch(openSignUpModal())
+    }
+
+    useEffect(() => {
+        console.log(datafromredux)
+    }, [datafromredux])
+    // const sendDataToChild = () => {
+    // setIsOpen(true)
+    // const dataToSend = {
+    //     modalStatus: isOpen
+    // }
+    // dispatch(isModal(dataToSend.modalStatus))
+    // }
+    // 메뉴버튼
+    const [showLinks, setShowLinks] = useState(false)
+    const linksContainerRef = useRef(null)
+    const linksRef = useRef(null)
+    // const [isOpen, setIsOpen] = useState(false)
+    // const isOpen = useSelector((state) => state.isOpen)
+
+    const toggleLinks = () => {
+        setShowLinks(!showLinks)
+    }
+    const handleLogout = () => {
+        try {
+            axios({
+                url: `${apiUrl}/logout`,
+                method: 'post',
+                withCredentials: true
+            })
+                .then((result) => {
+                    console.log(result, '/logout 실행 결과')
+                    window.open('/mainPL', '_self')
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    useEffect(() => {
+        console.log('redux data status', datafromredux)
+    }, datafromredux)
+
     return (
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
                 {/* <Navbar.Brand href="#home">TEST</Navbar.Brand> */}
                 <Navbar.Brand href="#home">
                     <img
-                        src="/src/fo4forum_logo.43694e2403db70406c27-removebg-preview.png"
+                        src={logo}
                         width="200"
                         height="50"
                         className="d-inline-block align-top"
                         alt="React Bootstrap logo"
                     />
                 </Navbar.Brand>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+                <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#features">Features</Nav.Link>
-                        <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">
-                                Another action
+                        <NavDropdown title="피파온라인4" id="collasible-nav-dropdown">
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/search" className={cx('link')}>선수 검색</Nav.Link>
                             </NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                            <NavDropdown.Divider />
-                            <NavDropdown.Item href="#action/3.4">
-                                Separated link
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/usersearch" className={cx('link')}>플레이어 검색</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/traderecord" className={cx('link')}>이적시장 내역 검색</Nav.Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="해외축구" id="collasible-nav-dropdown">
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/mainPL" className={cx('link')}>프리미어리그</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/mainLL" className={cx('link')}>라리가</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider/>
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/mainKL" className={cx('link')}>K리그</Nav.Link>
+                            </NavDropdown.Item>
+                        </NavDropdown>
+                        <NavDropdown title="기타" id="collasible-nav-dropdown">
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/patchnote" className={cx('link')}>패치 노트</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/voteregister" className={cx('link')}>투표 생성</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Divider/>
+                            <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/mainKL" className={cx('link')}>K리그</Nav.Link>
                             </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link href="#deets">More deets</Nav.Link>
-                        <Nav.Link eventKey={2} href="#memes">
-                            Dank memes
+                        <Nav.Link>
+                            <button type="button" className="btn btn-close-white" onClick={handleClickLoginOpen}>Login</button>
                         </Nav.Link>
+                        <Nav.Link>
+                            <button type="button" className="btn btn-close-white" onClick={handleClickSignUpOpen}>SignUp</button>
+                        </Nav.Link>
+
                     </Nav>
                 </Navbar.Collapse>
             </Container>
