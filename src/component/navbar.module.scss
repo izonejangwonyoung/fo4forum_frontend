@@ -219,6 +219,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     padding: 1%;
   }
   .nav-header {
@@ -285,18 +286,20 @@ nav {
   border: 1px solid rgba(104, 85, 224, 1);
 }
 
-.button_log:hover{
+.button_log:hover {
 
-    color: white;
-    //width:;
-    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
-    background-color: rgba(104, 85, 224, 1);
+  color: white;
+  //width:;
+  box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+  background-color: rgba(104, 85, 224, 1);
 
 }
-.button_container{
+
+.button_container {
   display: flex;
-
+  margin-left: auto;
 }
-.btn_login{
+
+.btn_login {
   flex: 1;
 }
