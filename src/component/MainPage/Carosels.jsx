@@ -70,7 +70,7 @@ const UncontrolledExample = () => {
     // )
     return (
         <div className={cx('outer_container')}>
-            <Carousel className={cx('carousel')} showThumbs={false} dynamicHeight={false} autoPlay={true}>
+            <Carousel className={cx('carousel')} showThumbs={false} dynamicHeight={false} autoPlay={true} showArrows={false}>
                 <div className={cx('container')}>
                     <img src={`${apiUrl}/etc?filename=pl_logo`} />
                 </div>
