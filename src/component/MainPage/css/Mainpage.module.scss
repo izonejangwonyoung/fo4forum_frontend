@@ -68,7 +68,9 @@
   margin-left: 54px;
   min-width: 800px;
 }
-
+.secondDiv > div {
+  flex-grow: 1;
+}
 .no {
   //background-color: #00b074;
   //display: inline-block;
