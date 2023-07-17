@@ -15,7 +15,7 @@ function Vote () {
     const [voteID, setVoteID] = useState()
     const [ShowAlert, setShowAlert] = useState(false)
     const [test, setTest] = useState(false)
-    const settings = {
+    const [settings, setSettings] = useState({
         dots: true,
         infinite: true,
         speed: 200,
@@ -23,8 +23,27 @@ function Vote () {
         slidesToScroll: 3,
         autoplay: true,
         pauseOnHover: true
-
+    })
+    const handleResize = () => {
+        const isMobile = window.innerWidth < 768 // 모바일 화면 기준 너비
+        const updatedSettings = {
+            ...settings,
+            slidesToShow: isMobile ? 1 : 3,
+            slidesToScroll: isMobile ? 1 : 3
+        }
+        setSettings(updatedSettings)
     }
+
+    useEffect(() => {
+        // 컴포넌트가 마운트될 때 이벤트 리스너 등록
+        window.addEventListener('resize', handleResize)
+        handleResize() // 초기 로드 시 설정값 업데이트
+
+        // 컴포넌트가 언마운트될 때 이벤트 리스너 제거
+        return () => {
+            window.removeEventListener('resize', handleResize)
+        }
+    }, [])
     useEffect(() => {
         if (ShowAlert) {
             alert('이미 투표한 기록이 존재합니다.')
@@ -73,22 +92,6 @@ function Vote () {
     return (
         <div>
 
-            {/* <Slider {...settings} > */}
-            {/* <div className={cx('outercontainer')}> */}
-            {/* {data && data.length */}
-            {/*    ? ( */}
-            {/*        data.map((it, index) => { */}
-            {/*            return ( */}
-            {/*                <div className={cx('vote_container_for_props')}> */}
-            {/*                    <span> */}
-            {/*                        <Vote_Container it={it} index={index} sendVote1={sendVote1} sendVote2={sendVote2}/> */}
-            {/*                    </span> */}
-            {/*                </div> */}
-            {/*            ) */}
-            {/*        } */}
-            {/*        )) */}
-            {/*    : null} */}
-            {/* </div> */}
             <Slider {...settings}>
 
                 {data && data.length
@@ -103,15 +106,6 @@ function Vote () {
                         }
                         ))
                     : null}
-
-                {/* {data.length && data.map((it, index) => { */}
-                {/*    return ( */}
-                {/*        <div> */}
-                {/*            <Vote_Container it={it} index={index} sendVote1={sendVote1} sendVote2={sendVote2}/> */}
-                {/*        </div> */}
-                {/*    ) */}
-                {/* })} */}
-
             </Slider>
 
         </div>
