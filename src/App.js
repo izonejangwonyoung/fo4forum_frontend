@@ -2,10 +2,10 @@ import logo from './logo.svg'
 import './App.css'
 import Navbar from './component/navbar'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import Traderecord from './component/test2'
+import Traderecord from './component/TradeRecord'
 import ApiTest from './component/ApiTest'
 import Search from './component/Search'
-import Login from './component/test'
+import SearchFO4PlayerRecord from './component/SearchFO4PlayerRecord'
 import AccordianTest from './component/AccordianTest'
 import Footer from './component/Footer'
 import PL_MainPageLayout from './component/MainPage/PL_MainPageLayout'
@@ -53,7 +53,7 @@ function App () {
                     <Route path="/login" element={<LoginPage/>}></Route>
                     <Route path="/mainLL" element={<LL_MainPageLayout/>}></Route>
                     <Route path="/mainKL" element={<KL_MainPageLayout/>}></Route>
-                    <Route path="/usersearch" element={<Login/>}></Route>
+                    <Route path="/usersearch" element={<SearchFO4PlayerRecord/>}></Route>
                     <Route path="/traderecord" element={<Traderecord/>}></Route>
                     <Route path="/traderecord" element={<Traderecord/>}></Route>
                     <Route path="/apitest" element={<ApiTest/>}></Route>

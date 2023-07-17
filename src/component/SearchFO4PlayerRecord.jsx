@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import division from '../data/division'
 import matchType from '../data/matchType.json'
-import Record from './record'
 import ShowUserData from './ShowUserData'
 import RecentStat from './RecentStat'
 import RecentMatchRecord from './RecentMatchRecord'
@@ -14,7 +13,7 @@ import styles from './css/test.module.scss'
 import classNames from 'classnames/bind'
 const cx = classNames.bind(styles)
 
-function Login () {
+function SearchFO4PlayerRecord () {
     const apiKey = process.env.REACT_APP_NEXON_API_KEY
     const [inputValue, setInputValue] = useState('')
     const [userdata, setUserdata] = useState('')
@@ -23,11 +22,8 @@ function Login () {
     const [modalShowLoading, setModalShowLoading] = useState(false)
     const [modalShowSecondLoading, setModalShowSecondLoading] = useState(false)
 
-    // const [pop, setPop] = useState(matchType)    ///matchType
-    // const [useraccessid,setuseraccessid]=useState('')
     const [matchiddata, setmatchiddata] = useState('')
     const [matchType, setMatchType] = useState('52')
-    // const [matchdatadetail, setmatchdatadetail] = useState();
     const [matchdatadetail, setmatchdatadetail] = useState([])
 
     let useraccessid = ''
@@ -69,23 +65,6 @@ function Login () {
                 // setmatchdatadetail(sortedMatchDataDetail);
             })
         })
-        // return(
-        //     <div>
-        //         {matchdatadetail.map((it, index) => {
-        //             matchdatadetail.sort((a, b) => new Date(b.matchDate) - new Date(a.matchDate));
-        //
-        //             console.log('here', it)
-        //             // console.log(it.matchInfo[0].accessId)
-        //             return (<div>
-        //                 <p>시간: {it.matchDate}</p>
-        //                 <p>타입: {it.matchType}</p>
-        //             </div>)
-        //         })}
-        //
-        //
-        //     </div>
-        //
-        // )
         setModalShowLoading(false)
     }
     const handleButtonClick = () => {
@@ -318,4 +297,4 @@ function Login () {
     )
 }
 
-export default Login
+export default SearchFO4PlayerRecord
