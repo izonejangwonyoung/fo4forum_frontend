@@ -188,7 +188,7 @@ import { openSignUpModal, closeSignUpModal } from '../Redux/SignUpModalControlRe
 const cx = classNames.bind(styles)
 const apiUrl = process.env.REACT_APP_API_URL
 
-function navbarexample () {
+function Navbarexample () {
     const [IsLogin, setIsLogin] = useState(false)
     const [user, setUser] = useState({})
     useEffect(() => {
@@ -335,4 +335,4 @@ function navbarexample () {
     )
 }
 
-export default navbarexample
+export default Navbarexample
