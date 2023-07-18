@@ -201,14 +201,23 @@ p {
   flex-wrap: wrap;
   margin-left: 54px;
   min-width: 800px;
+  justify-content: space-between;
+
 }
-.secondDiv > div {
-  flex-grow: 1;
-}
+//.secondDiv > div {
+//  flex-grow: 1;
+//}
 .no {
   //background-color: #00b074;
   //display: inline-block;
+  //flex-basis: calc(15.33% - 20px);
 
+
+
+
+  //flex-basis: calc(25% - 13.5px);
+  //max-width: calc(25% - 13.5px);
+  //margin-bottom: 20px;
 }
 
 .score_div {
@@ -219,13 +228,26 @@ p {
   //background-color: #00b074;
   display: inline-block;
   margin-left: 55px;
+  //flex-basis: calc(15.33% - 20px);
+
+
+
+  //flex-basis: calc(25% - 13.5px);
+  //max-width: calc(25% - 13.5px);
+  //margin-bottom: 20px;
 }
 
 .no1 {
   display: inline-block;
   //background-color: #664d03;
   margin-left: 50px;
+  //flex-basis: calc(15.33% - 20px);
+
+  //flex-basis: calc(50% - 27px);
+  //max-width: calc(50% - 27px);
+  //margin-bottom: 20px;
 }
+
 
 
 .test2 ///득점 순위
@@ -488,11 +510,15 @@ p {
 
 
 //태블릿용
-@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+@media only screen and (min-width: 769px) and (max-width: 1479px) and (orientation: landscape) {
   .secondDiv{
     .no{
       order: 2;
+
     }
+    //.no2{
+    //  order: 1;
+    //}
   }
 }
 

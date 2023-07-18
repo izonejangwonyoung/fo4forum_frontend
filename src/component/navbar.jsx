@@ -321,20 +321,20 @@ function Navbarexample () {
 
                             ? (
 
-                                <Nav.Link>
+                                <Nav.Link className={cx('login_btn')}>
                                     <button type="button" className="btn btn-close-white" onClick={handleLogout}>Logout</button>
                                 </Nav.Link>
 
                             )
                             : (
 
-                                <Nav.Link>
+                                <Nav.Link className={cx('login_btn')}>
                                     <button type="button" className="btn btn-close-white" onClick={handleClickLoginOpen}>Login</button>
                                 </Nav.Link>
 
                             )
                         }
-                        <Nav.Link>
+                        <Nav.Link className={cx('login_btn')}>
                             <button type="button" className="btn btn-close-white" onClick={handleClickSignUpOpen}>SignUp</button>
                         </Nav.Link>
 
