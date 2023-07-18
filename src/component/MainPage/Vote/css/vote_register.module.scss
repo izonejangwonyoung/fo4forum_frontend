@@ -1,6 +1,56 @@
 .container_main{
   display: flex;
 }
+.search_container{
+  display: flex;
+  flex: 1;
+}
+
+.container1{
+  flex: 1;
+}
+.container2{
+  flex: 1;
+}
+.result_container{
+  margin-left: 10px;
+  margin-right: 10px;
+  //border: solid 1px black;
+  display: flex;
+  button,
+  input {
+    height: 38px;
+  }
+}
+.player_container{
+  border: solid 1px black;
+}
 input{
   color: black;
 }
+.season_img{
+  width: 36px;
+  height: 36px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+.container_main{
+  display: flex;
+}
+  .search_container{
+    display: flex;
+    flex-direction: column;
+  }
+  .container1{
+    order: 1;
+  }
+  .container2{
+    order: 2;
+  }
+  .result_container{
+    order: 3;
+  }
+}
+
