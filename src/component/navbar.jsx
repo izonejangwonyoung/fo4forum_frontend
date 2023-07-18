@@ -272,7 +272,7 @@ function Navbarexample () {
         <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
             <Container>
                 {/* <Navbar.Brand href="#home">TEST</Navbar.Brand> */}
-                <Navbar.Brand href="#home">
+                <Navbar.Brand href="/mainPL">
                     <img
                         src={logo}
                         width="200"
@@ -314,16 +314,26 @@ function Navbarexample () {
                             <NavDropdown.Item>
                                 <Nav.Link as={Link} to="/voteregister" className={cx('link')}>투표 생성</Nav.Link>
                             </NavDropdown.Item>
-                            <NavDropdown.Divider/>
-                            <NavDropdown.Item>
-                                <Nav.Link as={Link} to="/mainKL" className={cx('link')}>K리그</Nav.Link>
-                            </NavDropdown.Item>
                         </NavDropdown>
                     </Nav>
                     <Nav>
-                        <Nav.Link>
-                            <button type="button" className="btn btn-close-white" onClick={handleClickLoginOpen}>Login</button>
-                        </Nav.Link>
+                        {IsLogin
+
+                            ? (
+
+                                <Nav.Link>
+                                    <button type="button" className="btn btn-close-white" onClick={handleLogout}>Logout</button>
+                                </Nav.Link>
+
+                            )
+                            : (
+
+                                <Nav.Link>
+                                    <button type="button" className="btn btn-close-white" onClick={handleClickLoginOpen}>Login</button>
+                                </Nav.Link>
+
+                            )
+                        }
                         <Nav.Link>
                             <button type="button" className="btn btn-close-white" onClick={handleClickSignUpOpen}>SignUp</button>
                         </Nav.Link>
