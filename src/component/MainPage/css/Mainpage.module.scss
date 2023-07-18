@@ -485,3 +485,17 @@ p {
 //  width: 838px;
 //  border-radius: 10px;
 //}
+
+
+//태블릿용
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  .secondDiv{
+    .no{
+      order: 2;
+    }
+  }
+}
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) and (orientation: landscape) {
+  /* 태블릿 가로 화면용 스타일 */
+}
