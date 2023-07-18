@@ -332,7 +332,7 @@ p {
     display: flex;
     margin: 0;
     flex-direction: row;
-    overflow-x: hidden;
+    //overflow-x: hidden;
   }
   .carousel {
     flex: 0 0 100%; /* 각 자식 요소가 1줄 씩 가로로 화면을 꽉 채우도록 flex 속성을 설정합니다 */
