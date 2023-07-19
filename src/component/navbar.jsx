@@ -309,6 +309,9 @@ function Navbarexample () {
                         </NavDropdown>
                         <NavDropdown title="기타" id="collasible-nav-dropdown">
                             <NavDropdown.Item>
+                                <Nav.Link as={Link} to="/detailSchedule" className={cx('link')}>경기 일정 조회</Nav.Link>
+                            </NavDropdown.Item>
+                            <NavDropdown.Item>
                                 <Nav.Link as={Link} to="/patchnote" className={cx('link')}>패치 노트</Nav.Link>
                             </NavDropdown.Item>
                             <NavDropdown.Item>
