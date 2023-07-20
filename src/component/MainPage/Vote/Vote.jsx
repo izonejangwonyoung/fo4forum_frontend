@@ -84,7 +84,7 @@ function Vote () {
 
     /// /투표 버튼이 눌려서 성공적으로 투표가 되면 투표 리스트를 새로 불러옴
     useEffect(() => {
-        axiosInstance.get('/vote/list').then((response) => {
+        axiosInstance.get('/vote/list', { withCredentials: true }).then((response) => {
             console.log(response.data)
             setData(response.data)
         })
