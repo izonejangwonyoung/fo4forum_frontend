@@ -19,8 +19,8 @@ function Mypage () {
                 data && data.length
                     ? (
                         <div>
-                            {data.id}
-                            {data.email}
+                            {data.ID}
+                            {data.EMAIL}
                         </div>
 
                     )
