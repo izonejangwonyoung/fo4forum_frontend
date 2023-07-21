@@ -1,18 +1,31 @@
 import axios from 'axios'
 import axiosInstance from '../Instance'
+import { useState } from 'react'
 
 function Mypage () {
+    const [data, setData] = useState({})
     const sendtestapi = () => {
         axiosInstance.get('/mypage/test', { withCredentials: true }).then((response) => {
             console.log(response.data)
+            setData(response.data)
         })
     }
+
     return (
 
         <div>
-            mypage
+            <button onClick={sendtestapi}>내 정보 보기</button>
+            {
+                data && data.length
+                    ? (
+                        <div>
+                            {data.id}
+                            {data.email}
+                        </div>
 
-            <button onClick={sendtestapi}>send api</button>
+                    )
+                    : null
+            }
         </div>
     )
 }
