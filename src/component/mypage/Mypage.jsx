@@ -3,11 +3,11 @@ import axiosInstance from '../Instance'
 import { useState } from 'react'
 
 function Mypage () {
-    const [data, setData] = useState({})
+    const [data, setData] = useState()
     const sendtestapi = () => {
         axiosInstance.get('/mypage/test', { withCredentials: true }).then((response) => {
             console.log(response.data)
-            setData(response.data)
+            setData(response.data[0])
         })
     }
 
