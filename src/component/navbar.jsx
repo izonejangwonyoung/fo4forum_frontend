@@ -323,10 +323,15 @@ function Navbarexample () {
                         {IsLogin
 
                             ? (
+                                <>
 
-                                <Nav.Link className={cx('login_btn')}>
-                                    <button type="button" className="btn btn-close-white" onClick={handleLogout}>Logout</button>
-                                </Nav.Link>
+                                    <Nav.Link className={cx('login_btn')}>
+                                        <button type="button" className="btn btn-close-white" onClick={handleLogout}>Logout</button>
+                                    </Nav.Link>
+                                    <Nav.Link className={cx('login_btn')} to="/mypage">
+                                        <button type="button" className="btn btn-close-white" >Mypage</button>
+                                    </Nav.Link>
+                                </>
 
                             )
                             : (

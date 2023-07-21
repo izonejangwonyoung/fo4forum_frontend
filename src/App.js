@@ -20,6 +20,7 @@ import SignUpModal from './component/Login/SignUpModal'
 import PL_DetailGameSchedule from './component/MainPage/GameSchedule/DetailSchedulePage/PL_DetailGameSchedule'
 import Vote_Register from './component/MainPage/Vote/Vote_Register'
 import PatchNote from './component/UpdatePage/PatchNote'
+import Mypage from './component/mypage/Mypage'
 
 function App () {
     const isModalOpen = useSelector(state => state.modal.isModalOpen) // Redux 상태 구독
@@ -62,6 +63,7 @@ function App () {
                     <Route path="/detailSchedule" element={<PL_DetailGameSchedule/>}></Route>
                     <Route path="/voteRegister" element={<Vote_Register/>}></Route>
                     <Route path="/patchnote" element={<PatchNote/>}></Route>
+                    <Route path="/mypage" element={<Mypage/>}></Route>
 
                 </Routes>
                 {/* <Footer/> */}
