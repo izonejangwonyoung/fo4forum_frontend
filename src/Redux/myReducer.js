@@ -1,24 +1,3 @@
-//
-// import { createSlice } from '@reduxjs/toolkit'
-//
-// const initialState = {
-//     tableNumber: '',
-//     rowNumber: ''
-// }
-//
-// const mySlice = createSlice({
-//     name: 'myData',
-//     initialState,
-//     reducers: {
-//         setData: (state, action) => {
-//             state.data = action.payload
-//         }
-//     }
-// })
-//
-// export const { setData } = mySlice.actions
-// export default mySlice.reducer
-
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {

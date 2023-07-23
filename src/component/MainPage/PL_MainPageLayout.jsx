@@ -14,13 +14,19 @@ import ToolTipForMainPage_matchschedule from './ToolTipForMainPage_matchschedule
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import Vote from './Vote/Vote'
+import { useDispatch, useSelector } from 'react-redux'
+import { login, logout } from '../../Redux/IsLogin'
 const apiUrl = process.env.REACT_APP_API_URL
 const cx = classNames.bind(styles)
+
 function PL_MainPageLayout () {
     const [LastPlayerScoreUpdateDate, setLastPlayerScoreUpdateDate] = useState()
     const [LastTeamScoreUpdateDate, setLastTeamScoreUpdateDate] = useState()
     const [LastMatchScheduleUpdateDate, setLastMatchScheduleUpdateDate] = useState()
-    const [IsLogin, setIsLogin] = useState(false)
+    const dispatch = useDispatch
+    // const [IsLogin, setIsLogin] = useState(false)
+    const isLogin = useSelector(state => state.loginStatus.isLogin)
+
     const [user, setUser] = useState({})
 
     useEffect(() => {
@@ -39,13 +45,16 @@ function PL_MainPageLayout () {
         try {
             const response = await axiosInstance.get(`${apiUrl}/login/verifytoken`, { withCredentials: true })
             if (response.status === 200) {
-                setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
+                // setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
+                dispatch(login)
             } else {
-                setIsLogin(false) // 서버 응답이 200이 아닌 경우 IsLogin을 false로 설정
+                // setIsLogin(false) // 서버 응답이 200이 아닌 경우 IsLogin을 false로 설정
+                dispatch(logout)
             }
         } catch (error) {
             console.error('Error verifying login:', error)
-            setIsLogin(false) // 요청이 실패한 경우에도 IsLogin을 false로 설정
+            // setIsLogin(false) // 요청이 실패한 경우에도 IsLogin을 false로 설정
+            dispatch(logout)
         }
     }
 
@@ -62,7 +71,8 @@ function PL_MainPageLayout () {
                 .then((result) => {
                     console.log(result, '/login/success 실행 결과')
                     if (result.data) {
-                        setIsLogin(true)
+                        // setIsLogin(true)
+                        dispatch(login)
                         setUser(result.data[0])
                         console.log(result)
                     }
@@ -83,6 +93,7 @@ function PL_MainPageLayout () {
                 withCredentials: true
             })
                 .then((result) => {
+                    dispatch(logout)
                     console.log(result, '/logout 실행 결과')
                     window.open('/mainPL', '_self')
                 })
@@ -196,7 +207,7 @@ function PL_MainPageLayout () {
                         <div className={cx('vote_div2')}><Link to="/voteRegister">투표 등록 바로가기</Link></div>
                     </div>
                     <div className={cx('container_vote')}>
-                        {IsLogin
+                        {isLogin
                             ? (
                                 <Vote/>
                             )
