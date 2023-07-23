@@ -34,6 +34,24 @@ function PL_MainPageLayout () {
             setLastMatchScheduleUpdateDate(response.data[0].REG_DATE)
         })
     }, [])
+    // 페이지가 로드될 때와 state가 업데이트될 때마다 실행되는 로직
+    const verifyLogin = async () => {
+        try {
+            const response = await axiosInstance.get(`${apiUrl}/login/verifytoken`, { withCredentials: true })
+            if (response.status === 200) {
+                setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
+            } else {
+                setIsLogin(false) // 서버 응답이 200이 아닌 경우 IsLogin을 false로 설정
+            }
+        } catch (error) {
+            console.error('Error verifying login:', error)
+            setIsLogin(false) // 요청이 실패한 경우에도 IsLogin을 false로 설정
+        }
+    }
+
+    useEffect(() => {
+        verifyLogin() // 페이지가 로드될 때 verifyLogin 함수를 실행
+    }, [])
     useEffect(() => {
         try {
             axios({
@@ -56,6 +74,7 @@ function PL_MainPageLayout () {
             console.log(error)
         }
     }, [])
+
     const handleLogout = () => {
         try {
             axios({
