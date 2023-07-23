@@ -184,6 +184,7 @@ import axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 import { openModal, closeModal } from '../Redux/LoginModalControlReducer'
 import { openSignUpModal, closeSignUpModal } from '../Redux/SignUpModalControlReducer'
+import axiosInstance from './Instance'
 
 const cx = classNames.bind(styles)
 const apiUrl = process.env.REACT_APP_API_URL
@@ -191,6 +192,24 @@ const apiUrl = process.env.REACT_APP_API_URL
 function Navbarexample () {
     const [IsLogin, setIsLogin] = useState(false)
     const [user, setUser] = useState({})
+    const verifyLogin = async () => {
+        try {
+            const response = await axiosInstance.get(`${apiUrl}/login/verifytoken`, { withCredentials: true })
+            if (response.status === 200) {
+                setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
+            } else {
+                setIsLogin(false) // 서버 응답이 200이 아닌 경우 IsLogin을 false로 설정
+            }
+        } catch (error) {
+            console.error('Error verifying login:', error)
+            setIsLogin(false) // 요청이 실패한 경우에도 IsLogin을 false로 설정
+        }
+    }
+
+    useEffect(() => {
+        verifyLogin() // 페이지가 로드될 때 verifyLogin 함수를 실행
+    }, [])
+
     useEffect(() => {
         try {
             axios({
