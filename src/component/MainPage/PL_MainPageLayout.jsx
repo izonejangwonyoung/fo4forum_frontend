@@ -46,15 +46,15 @@ function PL_MainPageLayout () {
             const response = await axiosInstance.get(`${apiUrl}/login/verifytoken`, { withCredentials: true })
             if (response.status === 200) {
                 // setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
-                dispatch(login)
+                dispatch(login())
             } else {
                 // setIsLogin(false) // 서버 응답이 200이 아닌 경우 IsLogin을 false로 설정
-                dispatch(logout)
+                dispatch(logout())
             }
         } catch (error) {
             console.error('Error verifying login:', error)
             // setIsLogin(false) // 요청이 실패한 경우에도 IsLogin을 false로 설정
-            dispatch(logout)
+            dispatch(logout())
         }
     }
 
@@ -72,7 +72,7 @@ function PL_MainPageLayout () {
                     console.log(result, '/login/success 실행 결과')
                     if (result.data) {
                         // setIsLogin(true)
-                        dispatch(login)
+                        dispatch(login())
                         setUser(result.data[0])
                         console.log(result)
                     }
@@ -93,7 +93,7 @@ function PL_MainPageLayout () {
                 withCredentials: true
             })
                 .then((result) => {
-                    dispatch(logout)
+                    dispatch(logout())
                     console.log(result, '/logout 실행 결과')
                     window.open('/mainPL', '_self')
                 })

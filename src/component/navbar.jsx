@@ -198,14 +198,14 @@ function Navbarexample () {
         try {
             const response = await axiosInstance.get(`${apiUrl}/login/verifytoken`, { withCredentials: true })
             if (response.status === 200) {
-                dispatch(login)
+                dispatch(login())
                 // setIsLogin(true) // 서버 응답이 200일 경우 IsLogin을 true로 설정
             } else {
-                dispatch(logout)
+                dispatch(logout())
             }
         } catch (error) {
             console.error('Error verifying login:', error)
-            dispatch(logout)
+            dispatch(logout())
         }
     }
 
@@ -224,7 +224,7 @@ function Navbarexample () {
                     console.log(result, '/login/success 실행 결과')
                     if (result.data) {
                         // setIsLogin(true)
-                        dispatch(login)
+                        dispatch(login())
                         setUser(result.data[0])
                         console.log(result)
                     }
