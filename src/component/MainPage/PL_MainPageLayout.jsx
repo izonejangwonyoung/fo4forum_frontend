@@ -177,7 +177,17 @@ function PL_MainPageLayout () {
                         <div className={cx('vote_div2')}><Link to="/voteRegister">투표 등록 바로가기</Link></div>
                     </div>
                     <div className={cx('container_vote')}>
-                        <Vote/>
+                        {IsLogin
+                            ? (
+                                <Vote/>
+                            )
+
+                            : (
+                                <div>
+                                    로그인 후 확인 가능합니다.
+                                </div>
+                            )
+                        }
                     </div>
                 </div>
             </div>
