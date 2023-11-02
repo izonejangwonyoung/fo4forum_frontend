@@ -71,7 +71,7 @@ function PL_DetailGameSchedule () {
                         <option disabled={true} selected={true} >League</option>
                         <option value="PL">프리미어리그</option>
                         <option value="LL">라리가</option>
-                        <option value="KL">K리그</option>
+                        {/* <option value="KL">K리그</option> */}
                     </select>
                 </div>
                 <div className={cx('selectbox_container')}>
