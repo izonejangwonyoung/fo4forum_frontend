@@ -74,7 +74,7 @@ function PL_DetailGameSchedule () {
             }
         }
 
-        axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/standing`, config)
+        axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/standings`, config)
             .then((response) => {
                 console.log(response.data)
             })
