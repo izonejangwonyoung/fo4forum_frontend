@@ -77,6 +77,7 @@ function PL_DetailGameSchedule () {
                 <div className={cx('selectbox_container')}>
                     <select className={cx('selectbox_year')} name="test" id="" onChange={handleYearValue}>
                         <option disabled={true} selected={true}>Year</option>
+                        <option value="2021">2021</option>
                         <option value="2022">2022</option>
                         <option value="2023">2023</option>
                     </select>
