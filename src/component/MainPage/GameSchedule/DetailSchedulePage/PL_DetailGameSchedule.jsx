@@ -5,6 +5,7 @@ import { Fragment, useEffect, useState } from 'react'
 import axios from 'axios'
 import axiosInstance from '../../../Instance'
 const cx = classNames.bind(styles)
+const apiKey = process.env.REACT_APP_FOOTBALL_DATA_ORG_TOKEN
 
 function PL_DetailGameSchedule () {
     const [selectYear, setSelectYear] = useState()
@@ -62,6 +63,25 @@ function PL_DetailGameSchedule () {
             setData(response.data)
         })
     }, [selectYear, selectMonth, selectLeague])
+    /// football-data.org api 테스트
+    useEffect(() => {
+        const config = {
+            headers: {
+                'X-Auth-Token': apiKey
+            },
+            params: {
+                season: selectYear
+            }
+        }
+
+        axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/standing`, config)
+            .then((response) => {
+                console.log(response.data)
+            })
+            .catch((error) => {
+                console.error(error)
+            })
+    }, [selectLeague, selectYear])
 
     return (
         <div className={cx('container')}>
