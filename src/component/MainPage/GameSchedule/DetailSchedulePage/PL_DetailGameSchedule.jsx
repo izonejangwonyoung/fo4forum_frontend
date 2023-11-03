@@ -55,14 +55,15 @@ function PL_DetailGameSchedule () {
 
         return groupedMatches
     }
-    useEffect(() => {
-        axiosInstance.get(`/${selectLeague}/matchSchedule/all`, {
-            params: { year: selectYear, month: selectMonth }
-        }).then((response) => {
-            console.log(response.data)
-            setData(response.data)
-        })
-    }, [selectYear, selectMonth, selectLeague])
+    /// DB에서 스크래핑 가져오는 부분(외부 api 사용으로 인해 임시 주석 처리)
+    // useEffect(() => {
+    //     axiosInstance.get(`/${selectLeague}/matchSchedule/all`, {
+    //         params: { year: selectYear, month: selectMonth }
+    //     }).then((response) => {
+    //         console.log(response.data)
+    //         setData(response.data)
+    //     })
+    // }, [selectYear, selectMonth, selectLeague])
     /// football-data.org api 테스트
     useEffect(() => {
         const config = {
@@ -77,6 +78,7 @@ function PL_DetailGameSchedule () {
         axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/standings`, config)
             .then((response) => {
                 console.log(response.data)
+                setData(response.data)
             })
             .catch((error) => {
                 console.error(error)
