@@ -9,7 +9,7 @@ const apiKey = process.env.REACT_APP_FOOTBALL_DATA_ORG_TOKEN
 
 function PL_DetailGameSchedule () {
     const [selectYear, setSelectYear] = useState()
-    const [selectMonth, setSelectMonth] = useState()
+    const [selectMonth, setSelectMonth] = useState('01')
     const [selectLeague, setSelectLeague] = useState()
     const [data, setData] = useState()
     const handleYearValue = (e) => {
@@ -72,8 +72,8 @@ function PL_DetailGameSchedule () {
             },
             params: {
                 season: selectYear,
-                dateFrom: selectYear + selectMonth + '01',
-                dateTo: selectYear + selectMonth + '31'
+                dateFrom: `${selectYear}-${selectMonth}-01`,
+                dateTo: `${selectYear}-${selectMonth}-31`
             }
         }
 
