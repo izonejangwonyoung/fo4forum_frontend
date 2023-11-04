@@ -107,14 +107,14 @@ function PL_DetailGameSchedule () {
             }
         }
 
-        axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/matches`, config)
-            .then((response) => {
-                console.log(response.data)
-                setData(response.data)
-            })
-            .catch((error) => {
-                console.error(error)
-            })
+        // axios.get(`https://api.football-data.org/v4/competitions/${selectLeague}/matches`, config)
+        //     .then((response) => {
+        //         console.log(response.data)
+        //         setData(response.data)
+        //     })
+        //     .catch((error) => {
+        //         console.error(error)
+        //     })
     }, [endDate])
 
     return (
